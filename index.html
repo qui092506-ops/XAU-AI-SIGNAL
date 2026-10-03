@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>XAU KATANA — AI Gold Trading System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div>
+      <div class="brand">XAU KATANA</div>
+      <div class="subtitle">AI Gold Trading System</div>
+    </div>
+    <div id="systemBadge" class="badge">CONNECTING</div>
+  </header>
+
+  <main>
+    <section class="hero card">
+      <div class="eyebrow">XAUUSD • MARKET</div>
+      <div class="price-line">
+        <div id="price" class="price">—</div>
+        <div id="feedStatus" class="status">—</div>
+      </div>
+      <div class="stats">
+        <div><span>Trend</span><b id="trend">—</b></div>
+        <div><span>Momentum</span><b id="momentum">—</b></div>
+        <div><span>RSI</span><b id="rsi">—</b></div>
+        <div><span>ATR</span><b id="atr">—</b></div>
+      </div>
+      <div class="tiny" id="marketMeta">Waiting for market data…</div>
+    </section>
+
+    <section class="card signal">
+      <div class="card-head">
+        <div class="eyebrow">PRIMARY TRADE SETUP</div>
+        <div id="signalTime" class="tiny">—</div>
+      </div>
+      <div id="direction" class="direction wait">WAIT</div>
+      <div class="signal-grid">
+        <div><span>Strength</span><b id="strength">—</b></div>
+        <div><span>Entry</span><b id="entry">—</b></div>
+        <div><span>Stop Loss</span><b id="sl">—</b></div>
+        <div><span>TP1</span><b id="tp1">—</b></div>
+        <div><span>TP2</span><b id="tp2">—</b></div>
+        <div><span>R:R</span><b id="rr">—</b></div>
+      </div>
+      <div class="analysis">
+        <span>AI Analysis</span>
+        <p id="analysis">Waiting for signal engine…</p>
+      </div>
+      <div class="actions">
+        <button id="refreshBtn" class="gold">REFRESH SIGNAL</button>
+        <button id="aiBtn">RUN AI ANALYSIS</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="eyebrow">TECHNICAL ENGINE</div>
+      <div class="checks">
+        <div><span>Trend</span><b id="trendCheck">—</b></div>
+        <div><span>Momentum</span><b id="momentumCheck">—</b></div>
+        <div><span>RSI filter</span><b id="rsiCheck">—</b></div>
+        <div><span>Volatility</span><b id="volCheck">—</b></div>
+        <div><span>Confirmation</span><b id="confirmCheck">—</b></div>
+        <div><span>Engine score</span><b id="engineScore">—</b></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <div class="eyebrow">EXECUTION</div>
+        <div id="brokerMode" class="tiny">PAPER MODE</div>
+      </div>
+      <div class="execution-grid">
+        <label>Units <input id="units" type="number" value="1" min="0.01" step="0.01"></label>
+        <label>Mode
+          <select id="mode">
+            <option value="paper">Paper</option>
+            <option value="broker">Broker</option>
+          </select>
+        </label>
+      </div>
+      <div class="actions">
+        <button id="buyBtn" class="buyBtn">BUY</button>
+        <button id="sellBtn" class="sellBtn">SELL</button>
+      </div>
+      <div id="executionMessage" class="tiny">No order sent.</div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <div class="eyebrow">ACCOUNT / POSITIONS</div>
+        <button id="accountBtn" class="mini">REFRESH</button>
+      </div>
+      <div class="account-grid">
+        <div><span>Balance</span><b id="balance">—</b></div>
+        <div><span>Open positions</span><b id="positions">—</b></div>
+        <div><span>Broker</span><b id="broker">—</b></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <div class="eyebrow">SIGNAL HISTORY</div>
+        <button id="clearBtn" class="mini">CLEAR</button>
+      </div>
+      <div id="history" class="history"></div>
+    </section>
+  </main>
+
+  <footer>
+    XAU KATANA • Spot feed is indicative reference data. AI/technical signals are informational only.
+    Broker execution is disabled until credentials are configured server-side.
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
