@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XAU KATANA — Gold Scalping Signal System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div>
+        <div class="brand">XAU KATANA</div>
+        <div class="subtitle">Gold Scalping Signal System</div>
+      </div>
+      <div class="mode">REAL PRICE • SIMULATED SIGNAL</div>
+    </header>
+
+    <main>
+      <section class="price-card">
+        <div class="section-label">XAUUSD SPOT</div>
+        <div class="price-row">
+          <div id="price" class="price">—</div>
+          <div id="priceState" class="status-pill loading">CONNECTING</div>
+        </div>
+        <div class="meta-grid">
+          <div><span>Market</span><strong id="market">—</strong></div>
+          <div><span>Session</span><strong id="session">—</strong></div>
+          <div><span>Last update</span><strong id="lastUpdate">—</strong></div>
+          <div><span>Refresh</span><strong id="countdown">—</strong></div>
+        </div>
+        <div id="dataMessage" class="data-message">Connecting to XAU/USD market data…</div>
+      </section>
+
+      <section class="signal-card">
+        <div class="card-head">
+          <div>
+            <div class="section-label">AI TRADE SIGNAL</div>
+            <h2 id="signal">WAIT</h2>
+          </div>
+          <div id="strength" class="strength">—%</div>
+        </div>
+
+        <div class="signal-grid">
+          <div><span>Bias</span><strong id="bias">—</strong></div>
+          <div><span>Entry</span><strong id="entry">—</strong></div>
+          <div><span>Stop Loss</span><strong id="sl">—</strong></div>
+          <div><span>TP1</span><strong id="tp1">—</strong></div>
+          <div><span>TP2</span><strong id="tp2">—</strong></div>
+          <div><span>R:R</span><strong id="rr">—</strong></div>
+        </div>
+
+        <div class="analysis-box">
+          <span>Analysis</span>
+          <p id="analysis">Waiting for market price.</p>
+        </div>
+
+        <button id="generateBtn" class="primary-btn">GENERATE NEW SIGNAL</button>
+      </section>
+
+      <section class="setup-card">
+        <div class="section-label">PRIMARY TRADE SETUP</div>
+        <div class="setup-main">
+          <div>
+            <span>Direction</span>
+            <strong id="setupDirection">WAIT</strong>
+          </div>
+          <div>
+            <span>Signal strength</span>
+            <strong id="setupStrength">—%</strong>
+          </div>
+          <div>
+            <span>Risk / Reward</span>
+            <strong id="setupRR">—</strong>
+          </div>
+        </div>
+        <div class="warning">
+          Testing mode: the price is fetched from a public XAU/USD spot feed, while the trading signal is simulated.
+        </div>
+      </section>
+
+      <section class="history-card">
+        <div class="card-head">
+          <div class="section-label">SIGNAL HISTORY</div>
+          <button id="clearBtn" class="small-btn">CLEAR</button>
+        </div>
+        <div id="history" class="history-list"></div>
+      </section>
+    </main>
+
+    <footer>
+      XAU KATANA • Market price: XAUS indicative spot • For testing/education only
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
